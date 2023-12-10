@@ -5,7 +5,21 @@
 groups = ["default"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:4a3189a91090291a073b9c2facdfee52b1e657ad6b2dc16ed019315223a4289b"
+content_hash = "sha256:567e58ed594865fc3308b7506b878ad257f473965989d331e46469241130275c"
+
+[[package]]
+name = "aio-pika"
+version = "9.3.1"
+requires_python = ">=3.7,<4.0"
+summary = "Wrapper around the aiormq for asyncio and humans"
+dependencies = [
+    "aiormq<6.8.0,>=6.7.7",
+    "yarl",
+]
+files = [
+    {file = "aio_pika-9.3.1-py3-none-any.whl", hash = "sha256:62ea4859572daccfc1d0963785185fa984f41f9fde576f9cc123ec899c257260"},
+    {file = "aio_pika-9.3.1.tar.gz", hash = "sha256:f199e5179ff9a362c1494ddd4d26f40834896726fea9b9d91de971b2ad304fc8"},
+]
 
 [[package]]
 name = "aiohttp"
@@ -97,6 +111,20 @@ files = [
     {file = "aiohttp-3.9.0-cp39-cp39-win32.whl", hash = "sha256:1df43596b826022b14998f0460926ce261544fedefe0d2f653e1b20f49e96454"},
     {file = "aiohttp-3.9.0-cp39-cp39-win_amd64.whl", hash = "sha256:9c196b30f1b1aa3363a69dd69079ae9bec96c2965c4707eaa6914ba099fb7d4f"},
     {file = "aiohttp-3.9.0.tar.gz", hash = "sha256:09f23292d29135025e19e8ff4f0a68df078fe4ee013bca0105b2e803989de92d"},
+]
+
+[[package]]
+name = "aiormq"
+version = "6.7.7"
+requires_python = ">=3.7,<4.0"
+summary = "Pure python AMQP asynchronous client library"
+dependencies = [
+    "pamqp==3.2.1",
+    "yarl",
+]
+files = [
+    {file = "aiormq-6.7.7-py3-none-any.whl", hash = "sha256:f5efbfcd7d703f3c05c08d4e74cfaa66ca7199840e2969d75ad41b0810026b0a"},
+    {file = "aiormq-6.7.7.tar.gz", hash = "sha256:3b93f612f56989b2757a9a7b299dd94dd3227ce28ba43e81d5fbcded6341dfab"},
 ]
 
 [[package]]
@@ -716,6 +744,16 @@ files = [
 ]
 
 [[package]]
+name = "nest-asyncio"
+version = "1.5.8"
+requires_python = ">=3.5"
+summary = "Patch asyncio to allow nested event loops"
+files = [
+    {file = "nest_asyncio-1.5.8-py3-none-any.whl", hash = "sha256:accda7a339a70599cb08f9dd09a67e0c2ef8d8d6f4c07f96ab203f2ae254e48d"},
+    {file = "nest_asyncio-1.5.8.tar.gz", hash = "sha256:25aa2ca0d2a5b5531956b9e273b45cf664cae2b145101d73b86b199978d48fdb"},
+]
+
+[[package]]
 name = "nodeenv"
 version = "1.8.0"
 requires_python = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
@@ -726,6 +764,16 @@ dependencies = [
 files = [
     {file = "nodeenv-1.8.0-py2.py3-none-any.whl", hash = "sha256:df865724bb3c3adc86b3876fa209771517b0cfe596beff01a92700e0e8be4cec"},
     {file = "nodeenv-1.8.0.tar.gz", hash = "sha256:d51e0c37e64fbf47d017feac3145cdbb58836d7eee8c6f6d3b6880c5456227d2"},
+]
+
+[[package]]
+name = "pamqp"
+version = "3.2.1"
+requires_python = ">=3.7"
+summary = "RabbitMQ Focused AMQP low-level library"
+files = [
+    {file = "pamqp-3.2.1-py2.py3-none-any.whl", hash = "sha256:15acef752356593ca569d13dfedc8ada9f17deeeb8cec4f7b77825e2b6c7de3e"},
+    {file = "pamqp-3.2.1.tar.gz", hash = "sha256:22550ceb1ca50aafda65873e77e8c1c1b139fb5975e1a09860fae940cf8e970a"},
 ]
 
 [[package]]

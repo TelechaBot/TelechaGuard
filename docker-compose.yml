@@ -1,0 +1,56 @@
+version: '3.3'
+
+services:
+  llmbot:
+    image: sudoskys/telecha:main
+    container_name: telecha
+    volumes:
+      # 挂载配置目录 config_dir
+      - ./config_dir:/app/config_dir
+    deploy:
+      resources:
+        limits:
+          # 保证至多有 0.90 个 CPU 和 4000MB 内存
+          cpus: '0.90'
+          memory: 4000M
+        reservations:
+          memory: 1000M
+    depends_on:
+      - rabbitmq
+    environment:
+      AMQP_DSN: amqp://admin:8a8a8a@rabbitmq:5672
+    env_file:
+      - .env
+    networks:
+      - app-tier
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbit
+    hostname: rabbitmq
+    restart: on-failure
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      TZ: Asia/Shanghai
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: 8a8a8a
+    volumes:
+      - ./rabbitmq:/var/lib/rabbitmq
+    networks:
+      - app-tier
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  app-tier:
+    driver: bridge
